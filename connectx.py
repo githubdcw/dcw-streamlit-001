@@ -22,7 +22,7 @@ def persistent_game_state(initial_state):
     if not hasattr(session, '_gamestate'):
         st.write('no gamestate')
         setattr(initial_state, 'env', make("connectx", debug=True))
-        setattr(initial_state, 'trainer', initial_state.env..train([None, random]))
+        setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
         setattr(session, '_gamestate', initial_state)
 
     else:
