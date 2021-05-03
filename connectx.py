@@ -36,7 +36,6 @@ class GameState:
     num_guesses: int = 0
     game_number: int = 0
     game_over: bool = False
-    env: make("connectx", debug=True)
 
 state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
 
@@ -45,8 +44,8 @@ if st.button("NEW GAME"):
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
-#     env = make("connectx", debug=True)
-    trainer = state.env.train([None, agent_q3])
+    env = make("connectx", debug=True)
+    trainer = env.train([None, agent_q3])
     obs = trainer.reset()
 #     done = False
 
