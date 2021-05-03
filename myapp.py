@@ -4,10 +4,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 a = 10
-for ii inrange(a):
+for ii in range(a):
     ii
 a =+
-for ii inrange(a):
+for ii in range(a):
     ii
 
 st.title('My first app')
