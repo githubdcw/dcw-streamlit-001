@@ -13,5 +13,8 @@ if st.checkbox('Show dataframe'):
     chart_data = pd.DataFrame(
        np.random.randn(20, 3),
        columns=['a', 'b', 'c'])
-
     chart_data
+if st.button('Say hello'):
+    st.write('Why hello there')
+else:
+    st.write('Goodbye')
