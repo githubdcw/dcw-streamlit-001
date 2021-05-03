@@ -35,7 +35,7 @@ def persistent_game_state(initial_state):
         st.write(st.server.server.Server.get_current()._get_session_info(session_id).session._gamestate)
         st.write(session._gamestate)
 
-    return session._gamestate
+    return session._gamestate, trainer
 
   
 HI = 1000
@@ -47,7 +47,7 @@ class GameState:
     game_number: int = 0
     game_over: bool = False
 
-state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
+state, trainer = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
 
 if st.button("NEW GAME"):
     state.number = random.randint(1, HI)
