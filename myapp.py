@@ -1,3 +1,4 @@
+#https://github.com/joelgrus/streamlit-games/blob/master/guessing_game.py
 import streamlit as st
 import random
 import dataclasses
@@ -6,6 +7,9 @@ import dataclasses
 def persistent_game_state(initial_state):
     session_id = st.report_thread.get_report_ctx().session_id
     session = st.server.server.Server.get_current()._get_session_info(session_id).session
+    # object2 = object1
+    # modify object2 then object is modified as well
+    # They are mapped to the same memory.
     st.write('in presistent')
     session
     if not hasattr(session, '_gamestate'):
@@ -13,7 +17,8 @@ def persistent_game_state(initial_state):
         setattr(session, '_gamestate', initial_state)
     else:
         st.write('has gamestate')
-        
+        st.write(st.server.server.Server.get_current()._get_session_info(session_id).session._gamestate)
+        st.write(session._gamestate)
 
     return session._gamestate
 
