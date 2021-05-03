@@ -52,7 +52,15 @@ if st.button("NEW GAME"):
     trainer = state.env.train([None, random])
     obs = trainer.reset()
 #     done = False
-st.write(state.env.render(mode="ansi"))
+
+tmp = env.render(mode="ansi")  
+out = ''
+for ii in range(13):
+out = out+tmp[ii*30:ii*30+29]+'<br>'
+if state.game_over:
+    out = out+'GAME OVER'
+    obs = trainer.reset()
+st.write(out)
 
 
     
