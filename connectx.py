@@ -11,6 +11,7 @@ import dataclasses
 # from gamestate import persistent_game_state
 def persistent_game_state(initial_state):
     global env
+    global trainer
 
     session_id = st.report_thread.get_report_ctx().session_id
     session = st.server.server.Server.get_current()._get_session_info(session_id).session
@@ -22,7 +23,9 @@ def persistent_game_state(initial_state):
     if not hasattr(session, '_gamestate'):
         st.write('no gamestate')
         setattr(initial_state, 'env', make("connectx", debug=True))
-        setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
+#         setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
+        trainer = initial_state.env.train([None, random])
+        trainer.reset()
         initial_state.env
         initial_state.trainer
         setattr(session, '_gamestate', initial_state)
@@ -52,7 +55,8 @@ if st.button("NEW GAME"):
     state.game_number += 1
     state.game_over = False
 #     trainer = state.env.train([None, random])
-    obs = state.trainer.reset()
+#     obs = state.trainer.reset()
+    obs = trainer.reset()
 #     done = False
 
 tmp = state.env.render(mode="ansi")  
@@ -62,9 +66,11 @@ if state.game_over:
     st.write('GAME OVER')
     obs = state.trainer.reset()
 if st.button("1"):
-    obs, reward, done, info = state.trainer.step(1)
+#     obs, reward, done, info = state.trainer.step(1)
+    obs, reward, done, info = trainer.step(1)
 if st.button("2"):
-    obs, reward, done, info = state.trainer.step(2)
+#     obs, reward, done, info = state.trainer.step(2)
+    obs, reward, done, info = trainer.step(2)
 
 
     
