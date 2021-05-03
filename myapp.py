@@ -6,7 +6,7 @@ import pandas as pd
 a = 10
 for ii in range(a):
     ii
-a =+
+a = a+5
 for ii in range(a):
     ii
 
