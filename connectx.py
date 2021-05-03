@@ -22,8 +22,8 @@ def persistent_game_state(initial_state):
     if not hasattr(session, '_gamestate'):
         st.write('no gamestate')
         setattr(initial_state, 'env', make("connectx", debug=True))
+        setattr(initial_state, 'trainer', initial_state.env..train([None, random]))
         setattr(session, '_gamestate', initial_state)
-#         env = make("connectx", debug=True)
 
     else:
         st.write('has gamestate')
@@ -49,8 +49,8 @@ if st.button("NEW GAME"):
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
-    trainer = state.env.train([None, random])
-    obs = trainer.reset()
+#     trainer = state.env.train([None, random])
+    obs = state.trainer.reset()
 #     done = False
 
 tmp = state.env.render(mode="ansi")  
@@ -58,11 +58,11 @@ for ii in range(13):
     st.write(tmp[ii*30:ii*30+29])
 if state.game_over:
     st.write('GAME OVER')
-    obs = trainer.reset()
+    obs = state.trainer.reset()
 if st.button("1"):
-    obs, reward, done, info = trainer.step(1)
+    obs, reward, done, info = state.trainer.step(1)
 if st.button("2"):
-    obs, reward, done, info = trainer.step(2)
+    obs, reward, done, info = state.trainer.step(2)
 
 
     
