@@ -49,10 +49,10 @@ if st.button("NEW GAME"):
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
-    trainer = env.train([None, random])
+    trainer = state.env.train([None, random])
     obs = trainer.reset()
 #     done = False
-state.env.render()
+st.write(state.env.render(mode="ansi"))
 
 
     
