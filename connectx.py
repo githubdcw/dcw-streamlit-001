@@ -10,6 +10,8 @@ import dataclasses
 
 # from gamestate import persistent_game_state
 def persistent_game_state(initial_state):
+    global env
+
     session_id = st.report_thread.get_report_ctx().session_id
     session = st.server.server.Server.get_current()._get_session_info(session_id).session
     # object2 = object1
@@ -20,6 +22,8 @@ def persistent_game_state(initial_state):
     if not hasattr(session, '_gamestate'):
         st.write('no gamestate')
         setattr(session, '_gamestate', initial_state)
+        env = make("connectx", debug=True)
+
     else:
         st.write('has gamestate')
         st.write(st.server.server.Server.get_current()._get_session_info(session_id).session._gamestate)
@@ -44,7 +48,6 @@ if st.button("NEW GAME"):
     state.num_guesses = 0
     state.game_number += 1
     state.game_over = False
-    env = make("connectx", debug=True)
     trainer = env.train([None, random])
     obs = trainer.reset()
 #     done = False
