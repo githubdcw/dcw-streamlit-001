@@ -45,9 +45,10 @@ if st.button("NEW GAME"):
     state.game_number += 1
     state.game_over = False
     env = make("connectx", debug=True)
-    trainer = env.train([None, agent_q3])
+    trainer = env.train([None, random])
     obs = trainer.reset()
 #     done = False
+env.render()
 
 
     
