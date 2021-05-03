@@ -3,7 +3,7 @@ import random
 import dataclasses
 
 # from gamestate import persistent_game_state
-def persistent_game_state(initial_state: StateT) -> StateT:
+def persistent_game_state(initial_state):
     session_id = st.report_thread.get_report_ctx().session_id
     session = st.server.server.Server.get_current()._get_session_info(session_id).session
     if not hasattr(session, '_gamestate'):
