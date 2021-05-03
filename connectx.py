@@ -53,7 +53,7 @@ if st.button("NEW GAME"):
     obs = trainer.reset()
 #     done = False
 
-tmp = env.render(mode="ansi")  
+tmp = state.env.render(mode="ansi")  
 for ii in range(13):
     st.write(tmp[ii*30:ii*30+29])
 if state.game_over:
