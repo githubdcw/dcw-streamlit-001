@@ -23,6 +23,8 @@ def persistent_game_state(initial_state):
         st.write('no gamestate')
         setattr(initial_state, 'env', make("connectx", debug=True))
         setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
+        initial_state.env
+        initial_state.trainer
         setattr(session, '_gamestate', initial_state)
 
     else:
