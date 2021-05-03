@@ -9,7 +9,12 @@ def persistent_game_state(initial_state):
     st.write('in presistent')
     session
     if not hasattr(session, '_gamestate'):
+        st.write('no gamestate)
         setattr(session, '_gamestate', initial_state)
+    else:
+        st.write('has gamestate)
+        
+
     return session._gamestate
 
 HI = 1000
