@@ -26,8 +26,8 @@ def persistent_game_state(initial_state):
 #         setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
         trainer = initial_state.env.train([None, random])
         trainer.reset()
-        initial_state.env
-        initial_state.trainer
+#         initial_state.env
+#         initial_state.trainer
         setattr(session, '_gamestate', initial_state)
 
     else:
