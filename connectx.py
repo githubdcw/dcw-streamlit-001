@@ -54,13 +54,11 @@ if st.button("NEW GAME"):
 #     done = False
 
 tmp = env.render(mode="ansi")  
-out = ''
 for ii in range(13):
-out = out+tmp[ii*30:ii*30+29]+'<br>'
+    st.write(tmp[ii*30:ii*30+29])
 if state.game_over:
-    out = out+'GAME OVER'
+    st.write('GAME OVER')
     obs = trainer.reset()
-st.write(out)
 
 
     
