@@ -26,11 +26,13 @@ def persistent_game_state(initial_state):
 #         setattr(initial_state, 'trainer', initial_state.env.train([None, random]))
         trainer = initial_state.env.train([None, random])
         trainer.reset()
+        setattr(initial_state, 'trainer', trainer)
 #         initial_state.env
 #         initial_state.trainer
         setattr(session, '_gamestate', initial_state)
 
     else:
+        trainer = session._gamestate.trainer
         st.write('has gamestate')
         st.write(st.server.server.Server.get_current()._get_session_info(session_id).session._gamestate)
         st.write(session._gamestate)
