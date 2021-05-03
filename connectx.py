@@ -36,7 +36,7 @@ class GameState:
     num_guesses: int = 0
     game_number: int = 0
     game_over: bool = False
-    env: kaggle_environments.core.Environment = make("connectx", debug=True)
+    env: make("connectx", debug=True)
 
 state = persistent_game_state(initial_state=GameState(random.randint(1, 1000)))
 
