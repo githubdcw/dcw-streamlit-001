@@ -21,8 +21,9 @@ def persistent_game_state(initial_state):
     session
     if not hasattr(session, '_gamestate'):
         st.write('no gamestate')
+        setattr(_gamestate, 'env', make("connectx", debug=True))
         setattr(session, '_gamestate', initial_state)
-        env = make("connectx", debug=True)
+#         env = make("connectx", debug=True)
 
     else:
         st.write('has gamestate')
@@ -51,7 +52,7 @@ if st.button("NEW GAME"):
     trainer = env.train([None, random])
     obs = trainer.reset()
 #     done = False
-env.render()
+state.env.render()
 
 
     
