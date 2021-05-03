@@ -59,6 +59,10 @@ for ii in range(13):
 if state.game_over:
     st.write('GAME OVER')
     obs = trainer.reset()
+if st.button("1"):
+    obs, reward, done, info = trainer.step(1)
+if st.button("2"):
+    obs, reward, done, info = trainer.step(2)
 
 
     
