@@ -3,6 +3,13 @@ import streamlit as st
 # working with sample data.
 import numpy as np
 import pandas as pd
+a = 10
+for ii inrange(a):
+    ii
+a =+
+for ii inrange(a):
+    ii
+
 st.title('My first app')
 st.write("Here's our first attempt at using data to create a table:")
 st.write(pd.DataFrame({
