@@ -1,3 +1,3 @@
 import streamlit as st
-form mylib import *
-st.write(1,2)
+from mylib import *
+st.write(add(1,2))
