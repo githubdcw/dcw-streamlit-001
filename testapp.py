@@ -18,10 +18,12 @@ def persistent_game_state(initial_state):
 
     return session._gamestate
 def xxx(a,c):
-  if a == 0:
+  if a.number == 0:
     a.number = 1
     c.empty()
     c.text(a.number)
+#     st.write(state)
+#     st.write(a)
   else:
     a.number = 0
     c.empty()
