@@ -1,6 +1,8 @@
 import streamlit as st
 from mylib import *
-def xxx(a,c):
+def xxx(a,b,c):
+  st.write(b)
+  b= b+1
   if a == 0:
     a = 1
     c.empty()
@@ -12,9 +14,10 @@ def xxx(a,c):
 
 c = st.empty()
 a=0
+b=0
 c.text(a)
 st.button('Click',on_click=xxx,kwargs={
-        'a': a, 'c': c
+        'a': a, 'b':b, 'c': c
     })
 
 st.write(add(1,2))
