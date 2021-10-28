@@ -3,15 +3,16 @@ from mylib import *
 def xxx(a,c):
   if a == 0:
     a = 1
-    c.write(a)
+    c.empty()
+    c.text(a)
   else:
-    a = 0
-    c.write(a)
+    c.empty()
+    c.text(a)
   return    
 
-c = st.container()
+c = st.empty()
 a=0
-c.write(a)
+c.text(a)
 st.button('Click',on_click=xxx,kwargs={
         'a': a, 'c': c
     })
