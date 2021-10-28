@@ -2,15 +2,16 @@ import streamlit as st
 from mylib import *
 def xxx(a,c):
   if a == 0:
-    c.write('1')
     a = 1
+    c.write(a)
   else:
-    c.write('0')
     a = 0
+    c.write(a)
   return    
 
 c = st.container()
 a=0
+c.write(a)
 st.button('Click',on_click=xxx,kwargs={
         'a': a, 'c': c
     })
