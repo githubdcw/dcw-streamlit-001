@@ -19,13 +19,13 @@ def persistent_game_state(initial_state):
     return session._gamestate
 def xxx(a,c):
   if a == 0:
-    a = 1
+    a.number = 1
     c.empty()
-    c.text(a)
+    c.text(a.number)
   else:
-    a = 0
+    a.number = 0
     c.empty()
-    c.text(a)
+    c.text(a.number)
   return    
 
 @dataclasses.dataclass
@@ -40,7 +40,7 @@ state = persistent_game_state(initial_state=GameState(0))
 c = st.empty()
 c.text(state.number)
 st.button('Click',on_click=xxx,kwargs={
-        'a': state.number,  'c': c
+        'a': state,  'c': c
     })
 
 st.write(add(1,2))
