@@ -9,7 +9,7 @@ def xxx(a,c):
     a = 0
   return    
 
-c = st.contrainer()
+c = st.container()
 a=0
 st.button('Click',on_click=xxx,kwargs={
         'a': a, 'c': c
