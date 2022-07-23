@@ -1,4 +1,4 @@
-import streamlet as st
+import streamlit as st
 # import cv2
 st.title('Webcam Test')
 run = st.checkbox('Run')
