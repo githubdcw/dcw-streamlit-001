@@ -1,11 +1,13 @@
 import streamlit as st
-# import cv2
+from streamlit_webrtc import webrtc_streamer
+import cv2
 st.title('Webcam Test')
 run = st.checkbox('Run')
 # FRAME_WINDOW = st.image([])
 # cap = cv2.VideoCapture(1)
-# while run:
+while run:
+  webrtc_streamer(key="example")
 #   ret, frame = cam.read()
 #   FRAME_WINDOW.image(frame)
-# else:
-#   st.write('STOPPED')
+else:
+  st.write('STOPPED')
