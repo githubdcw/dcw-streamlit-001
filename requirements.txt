@@ -1,4 +1,5 @@
 #kaggle_environments
 #opencv-contrib-python-headless
 streamlit==1.3.1
+streamlit_webrtc
 #streamlit_webrtc==0.20.0
