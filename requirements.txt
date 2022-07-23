@@ -1,1 +1,2 @@
 kaggle_environments
+opencv-python-headless
