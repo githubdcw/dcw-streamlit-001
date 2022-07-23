@@ -1,5 +1,5 @@
-import cv2
 import streamlet as st
+import cv2
 st.title('Webcam Test')
 run = st.checkbox('Run')
 FRAME_WINDOW = st.image([])
